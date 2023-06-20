@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "528302426060",
+    "project_id": "wellness-fc9bc",
+    "storage_bucket": "wellness-fc9bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528302426060:android:72c7b7982a6eab0f4dff69",
+        "android_client_info": {
+          "package_name": "com.example.welness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528302426060-iet2va5vdtg617018v35p06ge2sgh1q1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYR9SYApOWME0wkzHfdhff4OG8xI6o3H4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528302426060-iet2va5vdtg617018v35p06ge2sgh1q1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
