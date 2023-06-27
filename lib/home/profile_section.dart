@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wellness/colors.dart';
-import 'package:wellness/extensions.dart';
+import 'package:wellness/utils/colors.dart';
+import 'package:wellness/utils/extensions.dart';
+
 
 class ProfileSection extends StatelessWidget {
   const ProfileSection({super.key});

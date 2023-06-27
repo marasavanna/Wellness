@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wellness/dto/highlight_item_dto.dart';
 import 'package:wellness/home/item_highlight.dart';
@@ -7,8 +6,9 @@ import 'package:wellness/repository/highlight_repository.dart';
 
 
 class HighlightsSection extends StatelessWidget {
-  HighlightsSection({super.key});
+  HighlightsSection({super.key, required this.phaseId});
 
+  final String phaseId;
   final highlightRepository = HighlightRepository();
   final highlightMapper = HighlightMapper();
 
@@ -18,7 +18,7 @@ class HighlightsSection extends StatelessWidget {
       children: [
         Expanded(
             child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 24),
                 child: StreamBuilder<List<HighlightItemDto>>(
                     stream: highlightRepository.getHighlightItems(),
                     builder: (context, snapshot) {
@@ -38,7 +38,7 @@ class HighlightsSection extends StatelessWidget {
                                     crossAxisSpacing: 16,
                                     crossAxisCount: 2),
                             itemBuilder: (context, index) => ItemHighlight(
-                                highlightItem: highlightItems[index]));
+                                highlightItem: highlightItems[index], phaseId: phaseId,));
                       } else {
                         return const Center(child: CircularProgressIndicator());
                       }
