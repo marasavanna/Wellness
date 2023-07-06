@@ -10,29 +10,25 @@ class FoodItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 7.0),
       child: Container(
-          height: 84,
+          height: 24,
           decoration: const BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(8.0))),
-          child: Row(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.center, children: [
-            const Column(
+              borderRadius: BorderRadius.all(Radius.circular(10.0))),
+          child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Padding(
-                  padding: EdgeInsets.all(4.0),
-                  child: Image(
-                    image: NetworkImage(
-                        'https://cdn.shopify.com/s/files/1/0371/3368/0772/products/Spinach_2048x.jpg'),
-                    width: 76,
-                    height: 76,
-                  ),
-                )
-              ],
-            ),
-            Center(child: Column(crossAxisAlignment: CrossAxisAlignment.end,mainAxisAlignment: MainAxisAlignment.center, children: [Text(item.name)]))
-          ])),
+                Center(
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: Text(item.name, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 13),),
+                        )]))
+              ])),
     );
   }
 }

@@ -1,3 +1,10 @@
+import '../model/Phase.dart';
 
-const String backgroundColor = '#faf0d3';
-const String accentColor = '#f7b974';
+var backgroundColor = '#faf0d3';
+var accentColor = '#f7b974';
+
+
+void setColorsDependingOnPhase(Phase phase) {
+  backgroundColor = phase.backgroundColor;
+  accentColor = phase.accentColor;
+}

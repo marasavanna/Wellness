@@ -5,16 +5,18 @@ import 'package:wellness/home/highlights_section.dart';
 import 'package:wellness/home/profile_section.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.currentPhaseId});
 
-  final currentPhaseId = "follicular";
+  final String currentPhaseId;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const ProfileSection(),
+          ProfileSection(
+            currentPhase: currentPhaseId
+          ),
           const CalendarSection(),
           HighlightsSection(phaseId: currentPhaseId)
         ],

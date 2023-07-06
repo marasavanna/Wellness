@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:wellness/utils/colors.dart';
+import 'package:wellness/utils/date_utils.dart';
 import 'package:wellness/utils/extensions.dart';
 
-
 class ProfileSection extends StatelessWidget {
-  const ProfileSection({super.key});
+  const ProfileSection({super.key, required this.currentPhase});
+
+  final String currentPhase;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +19,12 @@ class ProfileSection extends StatelessWidget {
             borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(40.0),
                 bottomRight: Radius.circular(40.0))),
-        child: const Padding(
-            padding: EdgeInsets.only(left: 32),
+        child: Padding(
+            padding: const EdgeInsets.only(left: 32),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                     radius: 52,
                     backgroundColor: Colors.white,
                     child: CircleAvatar(
@@ -31,12 +33,12 @@ class ProfileSection extends StatelessWidget {
                             'https://i.pinimg.com/564x/8e/00/71/8e0071559e6f78380b64d7b6a95195c2.jpg'))),
                 Expanded(
                   child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Text(
-                        'Good evening, Mara!\nYou are currently in the follicular phase',
-                        style: TextStyle(
+                        'Good ${getCurrentTodName()}, Mara!\nYou are currently in the $currentPhase phase',
+                        style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.black,
+                            color: Colors.white,
                             fontWeight: FontWeight.bold),
                         softWrap: true,
                         maxLines: 3,

@@ -5,7 +5,6 @@ import 'package:wellness/mapper/food_mapper.dart';
 import 'package:wellness/repository/food_repository.dart';
 import 'package:wellness/utils/extensions.dart';
 
-import '../model/FoodItem.dart';
 import '../utils/colors.dart';
 
 class HighlightPage extends StatelessWidget {
@@ -26,19 +25,21 @@ class HighlightPage extends StatelessWidget {
                     padding:
                         const EdgeInsets.only(left: 16, right: 16, top: 24),
                     child: StreamBuilder<List<FoodItemDTO>>(
-                        stream: foodRepository
-                            .getFoodsRecommendedForPhase(currentPhaseId),
+                        stream: foodRepository.getFoodsRecommendedForPhase(
+                            currentPhaseId, 0),
                         builder: (context, snapshot) {
                           if (snapshot.hasError) {
                             return Text(
                                 'Something went wrong ${snapshot.error}!');
                           } else if (snapshot.hasData) {
                             final foodItemsDTO = snapshot.data!;
-                            final foodItems = foodMapper.mapTodoItemsToUIItems(foodItemsDTO);
+                            final foodItems =
+                                foodMapper.mapFoodItemsToUIItems(foodItemsDTO);
                             return ListView.builder(
                                 shrinkWrap: true,
                                 itemCount: foodItems.length,
-                                itemBuilder: (context, index) => FoodItemWidget(item: foodItems[index]));
+                                itemBuilder: (context, index) =>
+                                    FoodItemWidget(item: foodItems[index]));
                           } else {
                             return const Center(
                                 child: CircularProgressIndicator());

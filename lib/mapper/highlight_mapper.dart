@@ -4,13 +4,13 @@ import 'package:wellness/model/HighlightItem.dart';
 
 class HighlightMapper {
 
-  mapDTOToHighlightItem(HighlightItemDto dto) {
+  HighlightItem mapDTOToHighlightItem(HighlightItemDto dto) {
     return HighlightItem(
         name: dto.name,
         icon: 'assets/images/' + dto.iconPath +".svg",
         category: '');
   }
 
-  mapTodoItemsToUIItems(List<HighlightItemDto> itemsDTO) =>
+  List<HighlightItem> mapTodoItemsToUIItems(List<HighlightItemDto> itemsDTO) =>
       itemsDTO.map((e) => mapDTOToHighlightItem(e)).toList();
 }
